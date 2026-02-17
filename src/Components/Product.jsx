@@ -1,5 +1,5 @@
 import React from 'react'
-import { addToCart } from '../Slice/CartSlice'
+import { addToCart, removeCart } from '../Slice/CartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import './Prod.css'
 const Product = () => {
@@ -49,6 +49,10 @@ const Product = () => {
         dispatch(addToCart(item))
     }
 
+    const dltCart = (item) => {
+        dispatch(removeCart(item))
+    }
+
     return (
         <div>
             <div className='row'>
@@ -61,6 +65,9 @@ const Product = () => {
                                 <p className="card-text">{item.price}</p>
                                 <button onClick={() => addCart(item)}>
                                     Add to Cart
+                                </button>
+                                <button onClick={() => dltCart(item)}>
+                                    Delete Cart
                                 </button>
                             </div>
                         </div>
