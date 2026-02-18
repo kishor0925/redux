@@ -63,12 +63,15 @@ const Product = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{item.title}</h5>
                                 <p className="card-text">{item.price}</p>
+                                
+                                {Prod.find(items => items.id === item.id) ? 
                                 <button onClick={() => addCart(item)}>
                                     Add to Cart
-                                </button>
-                                <button onClick={() => dltCart(item)}>
+                                </button> :
+                                <button onClick={() => dltCart(item.id)}>
                                     Delete Cart
                                 </button>
+                                }
                             </div>
                         </div>
                     </div>
