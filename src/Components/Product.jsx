@@ -42,7 +42,7 @@ const Product = () => {
       img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e"
     }
   ];
-    const cartProducts = useSelector((state) => state.cart.cartItems)
+  
     const dispatch = useDispatch();
 
     const addCart = (item) => {
